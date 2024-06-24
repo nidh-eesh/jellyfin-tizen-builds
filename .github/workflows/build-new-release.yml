@@ -43,48 +43,48 @@ jobs:
       matrix:
         include:
           - tag: ${{ github.event.inputs.webReleaseTagName }}
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin
             legacy: false
           - tag: release-10.9.z
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-10.9.z
             legacy: false
           - tag: release-10.8.z
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-10.8.z
             legacy: true
           - tag: master
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-master
             legacy: false
           - tag: ${{ github.event.inputs.webReleaseTagName }}
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-intros
             legacy: false
             inject_intros: true
           - tag: release-10.9.z
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-10.9.z-intros
             legacy: false
             inject_intros: true
           - tag: ${{ github.event.inputs.webReleaseTagName }}
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-TrueHD
             true_hd: true
             legacy: false
           - tag: release-10.9.z
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-10.9.z-TrueHD
             true_hd: true
             legacy: false
           - tag: release-10.8.z
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-10.8.z-TrueHD
             true_hd: true
             legacy: true
           - tag: master
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-master-TrueHD
             true_hd: true
             legacy: false
@@ -94,12 +94,12 @@ jobs:
             true_hd: true
             legacy: true
           - tag: ${{ github.event.inputs.webReleaseTagName }}
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-secondary
             legacy: false
             secondary: true
           - tag: release-10.9.z
-            repository: jellyfin/jellyfin-web
+            repository: nidh-eesh/jellyfin-web
             artifact_name: Jellyfin-10.9.z-secondary
             legacy: false
             secondary: true
@@ -262,6 +262,6 @@ jobs:
           name: '${{ steps.date.outputs.date }}'
           files: |
             **/*.wgt
-          body: "${{ github.event.inputs.rawMarkdown }}\n\nLook at the [readme](https://github.com/jeppevinkel/jellyfin-tizen-builds/blob/master/README.md) for information about the different versions.\n## Normal Version\nJellyfin-Web: [${{ github.event.inputs.webReleaseTagName }}](https://github.com/jellyfin/jellyfin-web/releases/tag/${{ github.event.inputs.webReleaseTagName }})  \n## 10.9.z Version\nJellyfin-web: [release-10.9.z](https://github.com/jellyfin/jellyfin-web/tree/release-10.9.z)  \n## 10.8.z Version\nJellyfin-web: [release-10.8.z](https://github.com/jellyfin/jellyfin-web/tree/release-10.8.z)  \n## Master Version\nJellyfin-web: [master](https://github.com/jellyfin/jellyfin-web)"
+          body: "${{ github.event.inputs.rawMarkdown }}\n\nLook at the [readme](https://github.com/jeppevinkel/jellyfin-tizen-builds/blob/master/README.md) for information about the different versions.\n## Normal Version\nJellyfin-Web: [${{ github.event.inputs.webReleaseTagName }}](https://github.com/nidh-eesh/jellyfin-web/releases/tag/${{ github.event.inputs.webReleaseTagName }})  \n## 10.9.z Version\nJellyfin-web: [release-10.9.z](https://github.com/nidh-eesh/jellyfin-web/tree/release-10.9.z)  \n## 10.8.z Version\nJellyfin-web: [release-10.8.z](https://github.com/nidh-eesh/jellyfin-web/tree/release-10.8.z)  \n## Master Version\nJellyfin-web: [master](https://github.com/nidh-eesh/jellyfin-web)"
           prerelease: ${{ github.event.inputs.prerelease }}
 
