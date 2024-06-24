@@ -41,7 +41,7 @@ jobs:
         id: get_10_9_z_commit_web
         with:
           route: GET /repos/{owner}/{repo}/commits/{branch}
-          owner: jellyfin
+          owner: nidh-eesh
           repo: jellyfin-web
           branch: release-10.9.z
         env:
@@ -50,7 +50,7 @@ jobs:
         id: get_10_8_z_commit_web
         with:
           route: GET /repos/{owner}/{repo}/commits/{branch}
-          owner: jellyfin
+          owner: nidh-eesh
           repo: jellyfin-web
           branch: release-10.8.z
         env:
@@ -68,7 +68,7 @@ jobs:
         id: last_web_release
         uses: robinraju/release-downloader@cb096d8fa1fcb0e897f30b1c571f07e2c8e12479
         with:
-          repository: 'jellyfin/jellyfin-web'
+          repository: 'nidh-eesh/jellyfin-web'
           latest: true
           tarBall: true
           zipBall: false
@@ -94,12 +94,12 @@ jobs:
           fi
           echo "release-10.9.z: ${{ steps.versions.outputs.release_10_9_z }} = ${{ steps.versions.outputs.release_10_9_z != fromJson(steps.get_10_9_z_commit_web.outputs.data).sha}}"
           if ${{ steps.versions.outputs.release_10_9_z != fromJson(steps.get_10_9_z_commit_web.outputs.data).sha}}; then
-            causeOfUpdateLabel+="New commit to Jellyfin-10.9.z https://github.com/jellyfin/jellyfin-web/commit/${{ fromJson(steps.get_10_9_z_commit_web.outputs.data).sha }}\n"
+            causeOfUpdateLabel+="New commit to Jellyfin-10.9.z https://github.com/nidh-eesh/jellyfin-web/commit/${{ fromJson(steps.get_10_9_z_commit_web.outputs.data).sha }}\n"
             shouldUpdate=true
           fi
           echo "release-10.8.z: ${{ steps.versions.outputs.release_10_8_z }} = ${{ steps.versions.outputs.release_10_8_z != fromJson(steps.get_10_8_z_commit_web.outputs.data).sha}}"
           if ${{ steps.versions.outputs.release_10_8_z != fromJson(steps.get_10_8_z_commit_web.outputs.data).sha}}; then
-            causeOfUpdateLabel+="New commit to Jellyfin-10.8.z https://github.com/jellyfin/jellyfin-web/commit/${{ fromJson(steps.get_10_8_z_commit_web.outputs.data).sha }}\n"
+            causeOfUpdateLabel+="New commit to Jellyfin-10.8.z https://github.com/nidh-eesh/jellyfin-web/commit/${{ fromJson(steps.get_10_8_z_commit_web.outputs.data).sha }}\n"
             shouldUpdate=true
           fi
           echo "release: ${{ steps.versions.outputs.release }} = ${{ steps.versions.outputs.release != steps.last_web_release.outputs.tag_name }}"
